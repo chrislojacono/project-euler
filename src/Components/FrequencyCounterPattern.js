@@ -47,7 +47,7 @@ same([1,2,3,2,5], [9,1,4,4,11])
 
 
 ///My version of the anagram one
-function same(string1, string2){
+function validAnagram(string1, string2){
     if(string1.length !== string2.length){
         return false;
     }
@@ -65,10 +65,13 @@ function same(string1, string2){
         if(!(key in frequencyCounter2)){
             return false
         }
-        if(frequencyCounter2[key].value === key.value){
-            return true
+        console.log("freq2",frequencyCounter2[key]);
+        console.log("key.value", frequencyCounter1[key])
+        if(frequencyCounter2[key] !== frequencyCounter1[key]){
+            return false
         }
     }
+    return true
 }
 
 same("anagram", "nagarama");
