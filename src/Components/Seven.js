@@ -13,7 +13,7 @@ function isPrime(num) {
 function nthPrime(n) {
 //list prime numbers 
 let primeArray = [2];
-for(let i = 3; primeArray.length <= n; i + 2){
+for(let i = 3; primeArray.length < n; i + 2){
   if(isPrime(i)){
     primeArray.push(i)
   }
