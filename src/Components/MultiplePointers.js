@@ -39,7 +39,7 @@ function sumZeroBetter(array){
 // }
 
 
-//My SOlution to the Unique values array countUniqueValues([1,1,1,1,1,2]) => 2
+//My Solution to the Unique values array countUniqueValues([1,1,1,1,1,2]) => 2
 function countUniqueValues(array){
     let j = 1;
     let i = 0;
