@@ -80,12 +80,13 @@ function maxSubarraySum(arr, num) {
   function maxSubarraySum(arr, num){
     let maxSum = 0;
     let tempSum = 0;
-    if (arr.length < num) return null;
-    for (let i = 0; i < num; i++) {
+    if (arr.length < num) return null; //edge case
+    for (let i = 0; i < num; i++) { //this adds the first couple
       maxSum += arr[i];
     }
     tempSum = maxSum;
-    for (let i = num; i < arr.length; i++) {
+    for (let i = num; i < arr.length; i++) { //this slides the window
+        //instead of readding, you subtract the first number and add the new one
       tempSum = tempSum - arr[i - num] + arr[i];
       maxSum = Math.max(maxSum, tempSum);
     }
