@@ -30,16 +30,16 @@ function sumZeroBetter(array){
 }
 
 //My attempt
-// function countUniqueValues(array){
-//     let counter = [];
-//     for(let i = 0; i < array.length; i++){
-//     counter[array[i]] ? counter[array[i]] + 0 : counter.push(array[i])
-//     }
-//     return counter.length
-// }
+function countUniqueValues(array){
+    let counter = [];
+    for(let i = 0; i < array.length; i++){
+    counter[array[i]] ? counter[array[i]] + 0 : counter.push(array[i])
+    }
+    return counter.length
+}
 
 
-//My SOlution to the Unique values array countUniqueValues([1,1,1,1,1,2]) => 2
+//My Solution to the Unique values array countUniqueValues([1,1,1,1,1,2]) => 2
 function countUniqueValues(array){
     let j = 1;
     let i = 0;
@@ -55,3 +55,4 @@ function countUniqueValues(array){
     let numberOfUnique = i + 1
     return numberOfUnique
 }
+
