@@ -1,4 +1,4 @@
-//Naive Verison
+//Naive Verison - nested loops == slowww
 function sumZero(arr){
     for(let i = 0; i < arr.length; i++){
         for(let j = i+1; j < arr.length; j++){
@@ -40,6 +40,8 @@ function countUniqueValues(array){
 
 
 //My Solution to the Unique values array countUniqueValues([1,1,1,1,1,2]) => 2
+
+
 function countUniqueValues(array){
     let j = 1;
     let i = 0;
