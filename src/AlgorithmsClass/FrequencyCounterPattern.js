@@ -133,3 +133,16 @@ function validAnagram2(first, second) {
     }
     return true
 }
+
+//ARE THERE DUPLICATES EXERCISE
+//IMplement a function that checks whether there are any duplicates in an array
+function areThereDuplicates() {
+    let collection = {}
+    for(let val in arguments){
+      collection[arguments[val]] = (collection[arguments[val]] || 0) + 1
+    }
+    for(let key in collection){
+      if(collection[key] > 1) return true
+    }
+    return false;
+  }
