@@ -47,3 +47,39 @@ function longestConsec(strarr, k) {
     }
     return longest;
 }
+
+
+
+function partlist(arr) {
+  let newArray = [];
+  let startSlicer = 1;
+  let endSlicer = arr.length
+  let splicedPart = arr.slice(startSlicer, endSlicer).join(" ");
+  let tempArray = [arr[0], splicedPart]
+  newArray.push(tempArray)
+  
+  for(let i = 2; i < endSlicer; i++){
+    let loopSPlice = [arr.slice(0, [i]).join(" "), arr.slice(i, endSlicer).join(" ")]
+     newArray.push(loopSPlice)
+  }
+
+
+  console.log(newArray)
+}
+
+partlist(["I", "wish", "I", "hadn't", "come"]) 
+
+//The job was to split the items by 8 and reverse the bits of data
+
+function dataReverse(data) {
+  let finalArray = [];
+  let divisor = 8;
+  const result = new Array(Math.ceil(data.length / divisor))
+  .fill()
+  .map(item => data.splice(0, divisor))
+  
+  result.slice(0).reverse().map((item) => finalArray.push(...item))
+
+  
+  return finalArray
+}
