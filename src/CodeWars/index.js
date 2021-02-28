@@ -98,3 +98,38 @@ function minValue(values){
   }
     return Number(newArray.join(""))
 }
+//The mexican wave challenge 
+
+function wave(str){
+  if(str === ""){
+    return [];
+  }
+    let returnArray = [];
+    for(let i = 0; i < str.length; i++){
+      let loopString = str.split("");
+      if(loopString[i] !== " "){
+      let joinedString =  loopString.join("");
+      returnArray.push(joinedString.slice(0, i) + joinedString.charAt(i).toUpperCase() + joinedString.slice(i + 1, joinedString.length))
+      }
+
+    }
+    return returnArray
+}
+
+
+function evaporator(content, evap_per_day, threshold){ 
+  let threshHoldInMl =content * (threshold / 100)
+  let theAmount = content
+  let dayCount = 0
+  for(let i = 1; i < 1000; i++){
+      let amountEvaporated = content * (evap_per_day / 100)
+      theAmount -= amountEvaporated
+      dayCount++
+      if(theAmount <= threshHoldInMl){
+         
+          break;
+      }
+  }
+return dayCount
+}
+evaporator(10,10,10)
