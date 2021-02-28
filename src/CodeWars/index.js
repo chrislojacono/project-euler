@@ -83,3 +83,19 @@ function dataReverse(data) {
   
   return finalArray
 }
+
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
+
+function minValue(values){
+  //your code here
+  let uniqueChars = [...new Set(values)];
+  let newArray = [];
+  for(let i = 0;uniqueChars.length != 0; i++){
+    let smallestNumber = Math.min(...uniqueChars);
+    newArray.push(smallestNumber)
+    let index = uniqueChars.indexOf(smallestNumber)
+    uniqueChars.splice(index, 1)
+    
+  }
+    return Number(newArray.join(""))
+}
