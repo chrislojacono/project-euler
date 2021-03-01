@@ -133,3 +133,9 @@ function evaporator(content, evap_per_day, threshold){
 return dayCount
 }
 evaporator(10,10,10)
+
+
+// This challenge was to flatten a two dimensional array and sort it
+function flattenAndSort(array) {
+  return array.reduce((acc, val) => acc.concat(val), []).sort((a, b) => a - b);
+}
