@@ -141,3 +141,29 @@ function flattenAndSort(array) {
 }
 
 // solution("camelCasing")  ==  "camel Casing"
+function solution(string) {
+  return string.split(/(?=[A-Z])/).join(" "); 
+}
+
+
+// complete the function
+function highestRank(arr){
+  let collection = {}
+  for(let val in arr){
+    collection[arr[val]] = (collection[arr[val]] || 0) + 1
+  }
+  let highestKey = 0
+  let highestValue = 0
+  for(let value in collection){
+      if(collection[value] >= highestValue && parseInt(value, 10) >= highestKey){
+        highestKey = parseInt(value, 10)
+        highestValue = collection[value]
+        console.log(parseInt(value, 10))
+      }
+  }
+  console.log(collection)
+  return highestKey
+}
+
+var arr = [12, 10, 8, 12, 7, 6, 4, 10, 12];
+highestRank(arr)
