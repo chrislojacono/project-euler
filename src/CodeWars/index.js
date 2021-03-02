@@ -139,3 +139,5 @@ evaporator(10,10,10)
 function flattenAndSort(array) {
   return array.reduce((acc, val) => acc.concat(val), []).sort((a, b) => a - b);
 }
+
+// solution("camelCasing")  ==  "camel Casing"
