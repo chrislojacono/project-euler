@@ -171,3 +171,17 @@ highestRank(arr)
 function flattenAndSort(array) {
   return array.reduce((acc, val) => acc.concat(val), []).sort((a, b) => a - b);
 }
+
+function solution(nums){
+  if(nums == null || nums.length == 0){
+    return []
+  }
+  let finalArray = [];
+  for(let i = 0;nums.length !== 0; i++){
+    let smallestNumber = Math.min(...nums)
+    let index = nums.indexOf(smallestNumber)
+    finalArray.push(smallestNumber)
+    nums.splice(index, 1)
+  }
+  return finalArray
+}
