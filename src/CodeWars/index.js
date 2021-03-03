@@ -167,3 +167,7 @@ function highestRank(arr){
 
 var arr = [12, 10, 8, 12, 7, 6, 4, 10, 12];
 highestRank(arr)
+
+function flattenAndSort(array) {
+  return array.reduce((acc, val) => acc.concat(val), []).sort((a, b) => a - b);
+}
