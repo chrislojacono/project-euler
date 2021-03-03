@@ -58,3 +58,22 @@ function countUniqueValues(array){
     return numberOfUnique
 }
 
+function averagePair(arr, avg){
+    // add whatever parameters you deem necessary - good luck!
+        let left = 0;
+      let right = arr.length - 1;
+      while(left < right){
+          let sum = arr[left] + arr[right] / 2;
+          console.log(sum)
+          if(sum === avg){
+              return true;
+          }else if(sum > avg){
+              right--;
+          }else{
+              left++
+          }
+      }
+      return false
+}
+
+averagePair([1,3,3,5,6,7,10,12,19], 8)
