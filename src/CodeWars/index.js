@@ -185,3 +185,22 @@ function solution(nums){
   }
   return finalArray
 }
+
+function solve(s){
+  let uppercaseCount = 0;
+  let lowercaseCount = 0;
+for(let i = 0; i < s.length; i ++){
+  if (s[i] == s[i].toUpperCase()) {
+     uppercaseCount++;
+  }
+  if (s[i] == s[i].toLowerCase()){
+   lowercaseCount++
+  }
+}
+if(uppercaseCount > lowercaseCount){
+  return s.toUpperCase()
+}
+else{
+  return s.toLowerCase()
+}
+}
