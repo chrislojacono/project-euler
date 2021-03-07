@@ -77,3 +77,17 @@ function averagePair(arr, avg){
 }
 
 averagePair([1,3,3,5,6,7,10,12,19], 8)
+
+
+//Checks if the charachters in the first string appear somewhere in the second string without their order changing
+function isSubsequence(str1, str2) {
+    var i = 0;
+    var j = 0;
+    if (!str1) return true;
+    while (j < str2.length) {
+      if (str2[j] === str1[i]) i++;
+      if (i === str1.length) return true;
+      j++;
+    }
+    return false;
+  }
