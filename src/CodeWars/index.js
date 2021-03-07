@@ -204,3 +204,15 @@ else{
   return s.toLowerCase()
 }
 }
+
+function count (string) {  
+  // The function code should be here
+  if(string.length == 0){
+    return {};
+  }
+   let collection = {};
+   for(let val in string){
+      collection[string[val]] = (collection[string[val]] || 0) + 1
+    }
+  return collection
+}
