@@ -218,3 +218,29 @@ function count (string) {
 }
 
 //MARCH 9TH
+function iqTest(numbers){
+  let arrayOfNumbers = numbers.split(" ").map((num) => parseInt(num, 10))
+  let odd = 0;
+  let even = 0;
+  let unique = 0;
+  for(let i = 0; i < arrayOfNumbers.length; i++){
+    arrayOfNumbers[i] & 1 ? odd++ : even++ 
+  }
+  if(even > odd){
+    for(let j = 0; j < arrayOfNumbers.length; j++){
+      if(arrayOfNumbers[j] % 2 !== 0){
+        unique = arrayOfNumbers[j]
+      }
+    }
+  }
+    if(odd > even){
+    for(let k = 0; k < arrayOfNumbers.length; k++){
+      if(arrayOfNumbers[k] % 2 == 0){
+        unique = arrayOfNumbers[k]
+      }
+    }
+  }
+  return arrayOfNumbers.indexOf(unique) + 1
+}
+
+iqTest("2 4 7 8 10")
