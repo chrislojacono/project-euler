@@ -244,3 +244,23 @@ function iqTest(numbers){
 }
 
 iqTest("2 4 7 8 10")
+
+
+//Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. Punctuation marks should be treated as if they are a part of the word in this kata.
+
+function reverse(str){
+  if(str == ' ' || str == '   '){
+    return ''
+  }
+  let splitArray = str.split(" ")
+  let newArray = []
+  for(let i = 0; i < splitArray.length; i ++){
+    if( i % 2 !== 0 ){
+      newArray.push(splitArray[i].split('').reverse().join('') )
+    }
+   else{
+     newArray.push(splitArray[i])
+   }
+  }
+ return newArray.join(" ")
+}
