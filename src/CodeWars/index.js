@@ -264,3 +264,28 @@ function reverse(str){
   }
  return newArray.join(" ")
 }
+
+
+
+/*
+kebabize('camelsHaveThreeHumps') // camels-have-three-humps
+kebabize('camelsHave3Humps') // camels-have-humps
+*/
+
+function kebabize(str) {
+  let newArray = [];
+for(let i = 0; i < str.length; i++){
+  if(str[i] == str[i].toUpperCase() && isNaN(str[i]) && i !== 0 && str[i] !== '-'){
+      newArray.push("-")
+      newArray.push(str[i].toLowerCase())
+  }
+ else if(/^-?\d+$/.test(str[i]) == false && str[i] !== '-'){
+      newArray.push(str[i].toLowerCase())
+  }
+}
+let finalString = newArray.join("")
+if(finalString[0] == '-'){
+  finalString.shift()
+}
+return finalString
+}
