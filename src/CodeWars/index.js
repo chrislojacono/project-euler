@@ -264,3 +264,54 @@ function reverse(str){
   }
  return newArray.join(" ")
 }
+
+
+
+/*
+kebabize('camelsHaveThreeHumps') // camels-have-three-humps
+kebabize('camelsHave3Humps') // camels-have-humps
+*/
+
+function kebabize(str) {
+  let newArray = [];
+for(let i = 0; i < str.length; i++){
+  if(str[i] == str[i].toUpperCase() && isNaN(str[i]) && i !== 0 && str[i] !== '-'){
+      newArray.push("-")
+      newArray.push(str[i].toLowerCase())
+  }
+ else if(/^-?\d+$/.test(str[i]) == false && str[i] !== '-'){
+      newArray.push(str[i].toLowerCase())
+  }
+}
+let finalString = newArray.join("")
+if(finalString[0] == '-'){
+  finalString.shift()
+}
+return finalString
+}
+ /*
+ Each exclamation mark weight is 2; Each question mark weight is 3. Put two string left and right to the balance, Are they balanced?
+
+If the left side is more heavy, return "Left"; If the right side is more heavy, return "Right"; If they are balanced, return "Balance".
+ */
+
+
+function balance(left,right){
+  let leftScore = 0
+  let rightScore = 0
+  for(let i = 0; i < left.length; i++){
+    left[i] == '?' ? leftScore += 3 : leftScore += 2
+  }
+  for(let j = 0; j < right.length; j++){
+    right[j] == '?' ? rightScore += 3 : rightScore += 2
+  }
+  if(rightScore > leftScore){
+    return 'Right'
+  }
+  if(rightScore < leftScore){
+    return 'Left'
+  }
+  else{
+    return 'Balance'
+  }
+}
