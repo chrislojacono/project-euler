@@ -24,7 +24,6 @@ function toFixed(x) {
     }
     return x;
   }
-  
   function multiply(a, b)
   {
     let numA = parseInt(a);
