@@ -296,3 +296,22 @@ If the left side is more heavy, return "Left"; If the right side is more heavy, 
  */
 
 
+function balance(left,right){
+  let leftScore = 0
+  let rightScore = 0
+  for(let i = 0; i < left.length; i++){
+    left[i] == '?' ? leftScore += 3 : leftScore += 2
+  }
+  for(let j = 0; j < right.length; j++){
+    right[j] == '?' ? rightScore += 3 : rightScore += 2
+  }
+  if(rightScore > leftScore){
+    return 'Right'
+  }
+  if(rightScore < leftScore){
+    return 'Left'
+  }
+  else{
+    return 'Balance'
+  }
+}
