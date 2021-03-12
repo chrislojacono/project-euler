@@ -15,7 +15,6 @@ using System;
 
 class Result
 {
-
     /*
      * Complete the 'fizzBuzz' function below.
      *
